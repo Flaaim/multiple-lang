@@ -13,7 +13,9 @@
     ],
     "require": {
         "php": "^8.1",
-        "phpunit/phpunit": "^9.6"
+        "phpunit/phpunit": "^9.6",
+        "phroute/phroute": "^2.2",
+        "league/plates": "^3.5"
     },
     "autoload": {
         "psr-4": {
