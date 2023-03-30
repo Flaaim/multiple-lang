@@ -19,23 +19,24 @@ $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
 
 function urlInput()
 {
+
     $url = parse_url(trim($_SERVER['REQUEST_URI'], '/'), PHP_URL_PATH);
-    var_dump($url);
-    if(strlen($url) == 2){
-        $url = '/';
-        return $url;
-    } else {
-        $url_parts = explode('/', $url, 2);
-        
-            if(strlen($url_parts[0]) == 2){
-                App::$app->setProperty('lang', $url_parts[0]);
-                $url = $url_parts[1];
-                
-                
+
+    
+    $url_parts = explode('/', $url, 2);
+    
+    
+        if(strlen($url_parts[0]) == 2){
+            App::$app->setProperty('lang', $url_parts[0]);
+            if(count($url_parts) < 2){
+                $url = '/';
                 return $url;
             }
-    }
-
+            $url = $url_parts[1]; 
+            return $url;
+        }
+    
+        
     return $url;
 }
 

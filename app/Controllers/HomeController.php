@@ -6,6 +6,6 @@ class HomeController extends AppController
 {
     function index()
     {
-        return "Home";
+        return $this->template->render('home/index');
     }
 }

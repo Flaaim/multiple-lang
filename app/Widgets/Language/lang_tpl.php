@@ -1,6 +1,6 @@
 <div class="dropdown d-inline-block">Language
 		<a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
-		
+			
 			<img src="/assets/<?= \App\App::$app->getProperty('language')['code'] ?>.png" alt="">
 		</a>
 		<ul class="dropdown-menu" id="languages">

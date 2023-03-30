@@ -9,3 +9,8 @@ function redirect($http = false){
     header("Location: $redirect");
     die();
 }
+
+function baseurl()
+{
+    return "http://multiple.test".'/'.(\App\App::$app->getProperty('lang') ? \App\App::$app->getProperty('lang') : '');
+}
